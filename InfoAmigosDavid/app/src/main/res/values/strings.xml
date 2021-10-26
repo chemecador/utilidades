@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InfoAmigos3</string>
+    <string name="strInfo">Info:</string>
+    <string name="strHola">Hola</string>
+    <string name="strAdios">Adios</string>
+    <string name="strAnyadir">Añadir</string>
+    <string name="strDetalle">Detalle</string>
+    <string name="strDeuda">Deuda</string>
+    <string name="strNombre">Nombre y apellidos:</string>
+    <string name="strMail">E-mail:</string>
+    <string name="strTlfn">Teléfono:</string>
+    <string name="strMovil">Teléfono móvil:</string>
+    <string name="strDebt">Deuda:</string>
+    <string name="strDelete">Borrar</string>
+    <string name="strPreferences">Preferencias</string>
+    <string name="strAbout">Acerca de...</string>
+    <string name="strYourName">Tu nombre:</string>
+    <string name="strNameExplication">Cómo quieres que tus contactos te vean</string>
+    <string name="strMorosos">Morosos</string>
+    <string name="strMorosExplicacion">Ordenar a tus amigos según su deuda contigo</string>
+    <string name="strGalery">Cargar imágenes desde galería</string>
+    <string name="strGaleryExplication">Si no está marcado, la imagen se elegirá entre las predefinidas</string>
+    <string name="strUser">Usuario</string>
+    <string name="strList">Lista de amigos</string>
+    <string name="strBoton">Botón</string>
+    <string name="strCosa">cosa</string>
+
+</resources>
