@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Utilidades</string>
+    <string name="strPreferencias">Preferencias</string>
+    <string name="strAbout">Acerca de...</string>
+    <string name="strSuma">+</string>
+    <string name="strResta">-</string>
+    <string name="strMultiplicacion">X</string>
+    <string name="strDivision">÷</string>
+    <string name="strCuadrado">x^2</string>
+    <string name="strRaiz">sqrt(x)</string>
+    <string name="strCantidad">Cantidad</string>
+    <string name="strDivisa">Divisa</string>
+</resources>
