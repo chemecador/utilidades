@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Utilidades">
         <activity
+            android:name=".ListaCompraActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConversorActivity"
             android:exported="true" />
         <activity

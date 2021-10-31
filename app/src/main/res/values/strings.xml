@@ -4,10 +4,16 @@
     <string name="strAbout">Acerca de...</string>
     <string name="strSuma">+</string>
     <string name="strResta">-</string>
-    <string name="strMultiplicacion">X</string>
+    <string name="strMultiplicacion">x</string>
     <string name="strDivision">÷</string>
-    <string name="strCuadrado">x^2</string>
+    <string name="strElevar">X^Y</string>
     <string name="strRaiz">sqrt(x)</string>
     <string name="strCantidad">Cantidad</string>
-    <string name="strDivisa">Divisa</string>
+    <string name="strDivisa1">Cambiar de...</string>
+    <string name="strDivisa2">A...</string>
+    <string name="strCalculadora">Calculadora</string>
+    <string name="strConversor">Conversor</string>
+    <string name="strCalculadoraAclaracion">En la operación SQRT(x), solo se realizará la raíz cuadrada del primer número</string>
+    <string name="strConvertir">Convertir</string>
+    <string name="strListaCompra">Lista de la compra</string>
 </resources>

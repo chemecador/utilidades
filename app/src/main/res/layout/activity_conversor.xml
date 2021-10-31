@@ -10,12 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tDivisa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/strCantidad" />
 
@@ -30,23 +30,56 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tDivisa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/strDivisa" />
+            android:text="@string/strDivisa1" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/conversorSpinner1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/strDivisa2" />
+
+        <Spinner
+            android:id="@+id/conversorSpinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bConvertir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:backgroundTint="#2B47F8"
+        android:text="@string/strConvertir" />
+
+    <TextView
+        android:id="@+id/tCantidadFinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="20sp" />
 
 </LinearLayout>

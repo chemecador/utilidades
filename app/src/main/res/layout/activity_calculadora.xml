@@ -18,7 +18,9 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="number" />
+            android:hint="Escribe el primer número..."
+            android:inputType="number"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/tNumero2"
@@ -26,7 +28,9 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="number" />
+            android:hint="Escribe el segundo número"
+            android:inputType="number"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -47,14 +51,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strSuma" />
+                android:backgroundTint="#3AA84D"
+                android:text="@string/strSuma"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/bResta"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strResta" />
+                android:backgroundTint="#3AA84D"
+                android:text="@string/strResta"
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -68,14 +76,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strMultiplicacion" />
+                android:backgroundTint="#3AA84D"
+                android:text="@string/strMultiplicacion"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/bDivision"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strDivision" />
+                android:backgroundTint="#3AA84D"
+                android:text="@string/strDivision"
+                android:textSize="24sp" />
 
         </LinearLayout>
 
@@ -86,20 +98,38 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/bCuadrado"
-                android:layout_width="wrap_content"
+                android:id="@+id/bElevar"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:text="@string/strCuadrado" />
+                android:backgroundTint="#3AA84D"
+                android:text="@string/strElevar"
+                android:textSize="16sp"
+                tools:text="@string/strElevar" />
 
             <Button
                 android:id="@+id/bRaiz"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strRaiz" />
+                android:backgroundTint="#3AA84D"
+                android:text="@string/strRaiz"
+                android:textSize="16sp" />
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/strCalculadoraAclaracion"
+            tools:text="@string/strCalculadoraAclaracion" />
     </LinearLayout>
 
     <LinearLayout
