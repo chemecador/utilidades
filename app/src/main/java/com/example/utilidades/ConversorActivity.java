@@ -3,12 +3,14 @@ package com.example.utilidades;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -47,12 +49,16 @@ public class ConversorActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         DecimalFormat formateador = new DecimalFormat("####.###");
         Double antes = 0.0;
-        if (cantidad.toString().length() > 1){
+        if (cantidad.getText().toString().length() > 0){
             antes = Double.parseDouble(cantidad.getText().toString());
         }
         Double despues = antes;
         switch(v.getId()){
             case R.id.bConvertir:
+                if (cantidad.getText().toString().length() < 1) {
+                    Toast.makeText(this, "Introduce los dos sumandos arriba"
+                        , Toast.LENGTH_LONG).show();
+                }
                 String divisa1 = spinner1.getSelectedItem().toString();
                 String divisa2 = spinner2.getSelectedItem().toString();
                 if (divisa1.equals("euros")){

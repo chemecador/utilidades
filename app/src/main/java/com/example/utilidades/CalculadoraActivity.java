@@ -67,10 +67,6 @@ public class CalculadoraActivity extends AppCompatActivity implements View.OnCli
             n2 = Double.parseDouble(numero2.getText().toString());
         }
         switch (view.getId()) {
-            case R.id.tNumero1:
-                break;
-            case R.id.tNumero2:
-                break;
             case R.id.bSuma:
                 if (numero1.getText().toString().length() < 1 || numero2.getText().toString().length() < 1) {
                     Toast.makeText(this, "Introduce los dos sumandos arriba"
