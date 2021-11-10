@@ -16,17 +16,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button calculadora;
     Button conversor;
+    Button listaCompra;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         calculadora = findViewById(R.id.bMainCalculadora);
         calculadora.setOnClickListener(this);
 
         conversor = findViewById(R.id.bMainConversor);
         conversor.setOnClickListener(this);
+
+        listaCompra = findViewById(R.id.bMainListaCompra);
+        listaCompra.setOnClickListener(this);
 
     }
 
@@ -40,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bMainConversor:
                 Intent iConv = new Intent(this, ConversorActivity.class);
                 startActivity(iConv);
+                break;
+            case R.id.bMainListaCompra:
+                Intent iList = new Intent(this, ListaCompraActivity.class);
+                startActivity(iList);
                 break;
         }
     }

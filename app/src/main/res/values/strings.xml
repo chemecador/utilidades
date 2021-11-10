@@ -16,4 +16,8 @@
     <string name="strCalculadoraAclaracion">En la operación SQRT(x), solo se realizará la raíz cuadrada del primer número</string>
     <string name="strConvertir">Convertir</string>
     <string name="strListaCompra">Lista de la compra</string>
+    <string name="strAnadir">Añadir</string>
+    <string name="strTipoProducto">Tipo de producto:</string>
+    <string name="strNombreProducto">Nombre del producto:</string>
+    <string name="strPrecio">Precio</string>
 </resources>

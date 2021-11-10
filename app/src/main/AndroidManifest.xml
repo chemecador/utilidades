@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Utilidades">
         <activity
+            android:name=".AddActivity"
+            android:exported="true" />
+        <activity
             android:name=".ListaCompraActivity"
             android:exported="false" />
         <activity
