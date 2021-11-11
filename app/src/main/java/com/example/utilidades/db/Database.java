@@ -71,7 +71,7 @@ public class Database extends SQLiteOpenHelper {
             producto.setNombre(cursor.getString(2));
             producto.setPrecio(cursor.getDouble(3));
             producto.setCantidad(cursor.getInt(4));
-            producto.setFoto(Util.getBitmap(cursor.getBlob(6)));
+            producto.setFoto(Util.getBitmap(cursor.getBlob(5)));
             listaProductos.add(producto);
 
         }
@@ -95,7 +95,7 @@ public class Database extends SQLiteOpenHelper {
             producto.setNombre(cursor.getString(2));
             producto.setPrecio(cursor.getDouble(3));
             producto.setCantidad(cursor.getInt(4));
-            producto.setFoto(Util.getBitmap(cursor.getBlob(6)));
+            producto.setFoto(Util.getBitmap(cursor.getBlob(5)));
             listaProductos.add(producto);
 
         }
@@ -119,7 +119,7 @@ public class Database extends SQLiteOpenHelper {
             producto.setNombre(cursor.getString(2));
             producto.setPrecio(cursor.getDouble(3));
             producto.setCantidad(cursor.getInt(4));
-            producto.setFoto(Util.getBitmap(cursor.getBlob(6)));
+            producto.setFoto(Util.getBitmap(cursor.getBlob(5)));
             listaProductos.add(producto);
 
         }

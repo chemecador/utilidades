@@ -20,4 +20,8 @@
     <string name="strTipoProducto">Tipo de producto:</string>
     <string name="strNombreProducto">Nombre del producto:</string>
     <string name="strPrecio">Precio</string>
+    <string name="strInfo">Info</string>
+    <string name="strDetalles">Detalles</string>
+    <string name="strDetalle">Detalle</string>
+    <string name="strBorrar">Borrar</string>
 </resources>
