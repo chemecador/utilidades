@@ -8,7 +8,7 @@
     <string name="strDivision">÷</string>
     <string name="strElevar">X^Y</string>
     <string name="strRaiz">sqrt(x)</string>
-    <string name="strCantidad">Cantidad</string>
+    <string name="strCantidad">Cantidad:</string>
     <string name="strDivisa1">Cambiar de...</string>
     <string name="strDivisa2">A...</string>
     <string name="strCalculadora">Calculadora</string>
@@ -19,9 +19,14 @@
     <string name="strAnadir">Añadir</string>
     <string name="strTipoProducto">Tipo de producto:</string>
     <string name="strNombreProducto">Nombre del producto:</string>
-    <string name="strPrecio">Precio</string>
+    <string name="strPrecio">Precio:</string>
     <string name="strInfo">Info</string>
     <string name="strDetalles">Detalles</string>
     <string name="strDetalle">Detalle</string>
     <string name="strBorrar">Borrar</string>
+    <string name="strUsuario">Usuario</string>
+    <string name="strOrdenarPorPrecio">Ordenar por precio descendente</string>
+    <string name="strOrdenarPorPrecioDescripcion">Pulsa aquí si quieres ordenar los productos por precio descendente</string>
+    <string name="strNombreDescripcion">Tu nombre</string>
+    <string name="strNombreUsuario">Nombre de usuario</string>
 </resources>

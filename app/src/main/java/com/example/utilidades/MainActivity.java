@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          * de la barra de menú de la aplicación*/
         switch (item.getItemId()) {/*Según la opción seleccionada ejecutaré un código u otro*/
             case R.id.menu_preferencias:
+                startActivity(new Intent(this, PreferencesActivity.class)); //lanzo la Activity de preferencias
                 return true;
 
             case R.id.menu_acercade:
