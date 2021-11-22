@@ -8,4 +8,5 @@ public class ConstantesDB {
     public static final String PRECIO="precio";
     public static final String CANTIDAD="cantidad";
     public static final String FOTO ="foto";
+    public static final String URL = "https://www.zaragoza.es/sede/servicio/farmacia.json";
 }

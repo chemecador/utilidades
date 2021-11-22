@@ -37,7 +37,7 @@ AdapterView.OnItemClickListener{
         anadir.setOnClickListener(this);
 
         db = new Database(this);
-        listaProductos = new ArrayList<Producto>();
+        listaProductos = new ArrayList<>();
         lvLista = findViewById(R.id.lvListaCompra);
 
         lvLista.setOnItemLongClickListener(this);//asigno el listener que reaccionará ante al pulsación larga de un elemento a la lista
@@ -59,7 +59,7 @@ AdapterView.OnItemClickListener{
 
         super.onResume();
 
-            listaProductos=db.getProductos();
+        listaProductos=db.getProductos();
         adapter=new ProductoAdapter(this, listaProductos);//Creo el adaptador para la lista, que trabajará con el arraylist listaAmigos
         lvLista.setAdapter(adapter); //asigno el adaptador propio al listview
 
@@ -101,7 +101,7 @@ AdapterView.OnItemClickListener{
     }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        /*Método que se ejecutará si hay que crear un menú contextual, si
+        /* Método que se ejecutará si hay que crear un menú contextual, si
          * nuestra Activity tiene varios utilizaremos el View v para discriminar
          * qué menú es el apropiado*/
         super.onCreateContextMenu(menu, v, menuInfo);

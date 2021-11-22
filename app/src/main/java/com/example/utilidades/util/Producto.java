@@ -62,6 +62,7 @@ public class Producto {
     public void setFoto(Bitmap foto) {
         this.foto = foto;
     }
+
     public Intent putExtraProducto (Intent i){
         i.putExtra("TIPO",this.getTipo());
         i.putExtra("NOMBRE",this.getNombre());

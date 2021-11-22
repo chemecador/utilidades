@@ -29,4 +29,8 @@
     <string name="strOrdenarPorPrecioDescripcion">Pulsa aquí si quieres ordenar los productos por precio descendente</string>
     <string name="strNombreDescripcion">Tu nombre</string>
     <string name="strNombreUsuario">Nombre de usuario</string>
+    <string name="strFarmacias">Farmacias</string>
+    <string name="strNombre">Nombre:</string>
+    <string name="strTelefono">Teléfono:</string>
+    <string name="strDireccion">Dirección:</string>
 </resources>

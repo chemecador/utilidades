@@ -61,7 +61,7 @@ public class ProductoAdapter extends BaseAdapter {
 
         ViewHolder holder = null;
         if (convertView == null) {//Si convertView es nulo, será la primera vez que
-            convertView = inflater.inflate(R.layout.fila, null);
+            convertView = inflater.inflate(R.layout.fila_producto, null);
             holder = new ViewHolder();
             holder.foto = (ImageView) convertView.findViewById(R.id.ivFotoFila);
             holder.nombre = (TextView) convertView.findViewById(R.id.txtNombreFila);

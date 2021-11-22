@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.utilidades.db.ConstantesDB;
+import com.example.utilidades.util.Farmacia;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,15 +21,39 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class FarmaciaActivity extends AppCompatActivity {
 
+    ArrayList<Farmacia> listaFarmacias;
+    ListView lv;
+    FarmaciaAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farmacia);
+        listaFarmacias = new ArrayList<>();
+        Tarea tarea = new Tarea();
+        tarea.execute(ConstantesDB.URL);
+
+        lv = findViewById(R.id.lvFarmacias);
+
+
     }
-    /*public class Tarea extends AsyncTask<String, Void, Void> {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("***********************************", "Hay un total de " + listaFarmacias.size());
+        adapter = new FarmaciaAdapter(this,listaFarmacias);
+        lv.setAdapter(adapter);
+
+        for (Farmacia farmacia : listaFarmacias){
+            Log.i("-----------------",farmacia.getNombre());
+        }
+    }
+
+    public class Tarea extends AsyncTask<String, Void, Void> {
         private boolean error = false;
 
         @Override
@@ -48,31 +76,15 @@ public class FarmaciaActivity extends AppCompatActivity {
                 cadena = sb.toString();
 
                 json = new JSONObject(cadena);
-                jsonArray = json.getJSONArray("features");
+                jsonArray = json.getJSONArray("result");
 
-                String titulo;
-                String link;
-                String coordenadas;
-                Punto punto;
                 for (int i = 0; i < jsonArray.length(); i++) {
-                    titulo = jsonArray.getJSONObject(i).getJSONObject("properties").getString("title");
-                    link = jsonArray.getJSONObject(i).getJSONObject("properties").getString("link");
-                    coordenadas = jsonArray.getJSONObject(i).getJSONObject("geometry").getString("coordinates");
-                    coordenadas = coordenadas.substring(1, coordenadas.length() - 1);
-                    String latlong[] = coordenadas.split(",");
-
-                    punto = new Punto();
-                    punto.setNombre(titulo);
-                    punto.setLink(link);
-                    punto.setLatitud(DeUMTSaLatLng(Double.parseDouble(latlong[0]),
-                            Double.parseDouble(latlong[1])).getLat());
-                    punto.setLongitud(DeUMTSaLatLng(Double.parseDouble(latlong[0]),
-                            Double.parseDouble(latlong[1])).getLng());
-                    puntos.add(punto);
-
-                    System.out.println(punto.getNombre());
+                    Farmacia farmacia = new Farmacia();
+                    farmacia.setNombre(jsonArray.getJSONObject(i).getString("title"));
+                    farmacia.setTlf(jsonArray.getJSONObject(i).getString("telefonos"));
+                    farmacia.setDireccion(jsonArray.getJSONObject(i).getString("calle"));
+                    listaFarmacias.add(farmacia);
                 }
-
 
             } catch (IOException ioe) {
                 ioe.printStackTrace();
@@ -95,7 +107,7 @@ public class FarmaciaActivity extends AppCompatActivity {
                 return;
             }
 
-            pintarPuntos();
         }
-    }*/
+    }
+
 }
