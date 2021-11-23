@@ -8,7 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -89,6 +88,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
                 producto.setFoto(((BitmapDrawable)foto.getDrawable()).getBitmap());
                 db.nuevoProducto(producto);
+                finish();
                 break;
         }
     }

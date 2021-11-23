@@ -18,12 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button conversor;
     Button listaCompra;
     Button farmacias;
+    Button conecta;
 
-    /**
-     * 1. fila_producto al cambiar nombre
-     * 2. no muestra la lista
-     * 3. para qué sirve el getView()
-     * */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         farmacias = findViewById(R.id.bMainFarmacias);
         farmacias.setOnClickListener(this);
+
+        conecta = findViewById(R.id.bMainConecta);
+        conecta.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent iFarm = new Intent(this,FarmaciaActivity.class);
                 startActivity(iFarm);
                 break;
+            case R.id.bMainConecta:
+                Intent iCone = new Intent(this,ConectaActivity.class);
+                startActivity(iCone);
         }
     }
 

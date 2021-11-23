@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -103,10 +102,12 @@ public class FarmaciaActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             if (error) {
-                Toast.makeText(getApplicationContext(), "Error!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),
+                        "Ha ocurrido un error al leer el JSON de las Farmacias",
+                        Toast.LENGTH_LONG).show();
                 return;
             }
-
+            onResume();
         }
     }
 
