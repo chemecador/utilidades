@@ -33,5 +33,9 @@
     <string name="strNombre">Nombre:</string>
     <string name="strTelefono">Teléfono:</string>
     <string name="strDireccion">Dirección:</string>
-    <string name="strConecta">Conecta 4</string>
+    <string name="strConecta">Conecta 4 (1 jugador) </string>
+    <string name="srtConectaAmigo">Conecta 4 (2 jugadores)</string>
+    <string name="strTres">3 en raya (1 jugador)</string>
+    <string name="strTresAmigo">3 en raya (2 jugadores)</string>
+    <string name="strJuegos">Juegos</string>
 </resources>

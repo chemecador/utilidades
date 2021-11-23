@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Utilidades">
         <activity
+            android:name=".TresEnRayaAmigosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TresEnRayaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConectaAmigosActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConectaActivity"
             android:exported="true" />
         <activity

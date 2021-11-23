@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button listaCompra;
     Button farmacias;
     Button conecta;
-
+    Button conectaAmigos;
+    Button tresEnRaya;
+    Button tresEnRayaAmigos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         conecta = findViewById(R.id.bMainConecta);
         conecta.setOnClickListener(this);
+
+        conectaAmigos = findViewById(R.id.bMainConectaAmigo);
+        conectaAmigos.setOnClickListener(this);
+
+        tresEnRaya = findViewById(R.id.bMainTres);
+        tresEnRaya.setOnClickListener(this);
+
+        tresEnRayaAmigos = findViewById(R.id.bMainTresAmigo);
+        tresEnRayaAmigos.setOnClickListener(this);
     }
 
     @Override
@@ -58,12 +69,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(iList);
                 break;
             case R.id.bMainFarmacias:
-                Intent iFarm = new Intent(this,FarmaciaActivity.class);
+                Intent iFarm = new Intent(this, FarmaciaActivity.class);
                 startActivity(iFarm);
                 break;
             case R.id.bMainConecta:
-                Intent iCone = new Intent(this,ConectaActivity.class);
+                Intent iCone = new Intent(this, ConectaActivity.class);
                 startActivity(iCone);
+                break;
+            case R.id.bMainConectaAmigo:
+                Intent iConeAmig = new Intent(this, ConectaAmigosActivity.class);
+                startActivity(iConeAmig);
+                break;
+            case R.id.bMainTres:
+                Intent iTres = new Intent(this, TresEnRayaActivity.class);
+                startActivity(iTres);
+                break;
+            case R.id.bMainTresAmigo:
+                Intent iTresAmig = new Intent(this, TresEnRayaAmigosActivity.class);
+                startActivity(iTresAmig);
+                break;
         }
     }
 
