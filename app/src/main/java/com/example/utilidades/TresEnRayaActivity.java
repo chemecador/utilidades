@@ -147,68 +147,66 @@ public class TresEnRayaActivity extends AppCompatActivity implements View.OnClic
 
     private void colocarFicha(int pos, Boolean tuTurno) {
 
+        switch (pos) {
+            case 0:
+                if (tuTurno)
+                    b1.setText("X");
+                else
+                    b1.setText("O");
+                break;
+            case 1:
+                if (tuTurno)
+                    b2.setText("X");
+                else
+                    b2.setText("O");
+                break;
+            case 2:
+                if (tuTurno)
+                    b3.setText("X");
+                else
+                    b3.setText("O");
+                break;
+            case 3:
+                if (tuTurno)
+                    b4.setText("X");
+                else
+                    b4.setText("O");
+                break;
+            case 4:
+                if (tuTurno)
+                    b5.setText("X");
+                else
+                    b5.setText("O");
+                break;
+            case 5:
+                if (tuTurno)
+                    b6.setText("X");
+                else
+                    b6.setText("O");
+                break;
+            case 6:
+                if (tuTurno)
+                    b7.setText("X");
+                else
+                    b7.setText("O");
+                break;
+            case 7:
+                if (tuTurno)
+                    b8.setText("X");
+                else
+                    b8.setText("O");
+                break;
+            case 8:
+                if (tuTurno)
+                    b9.setText("X");
+                else
+                    b9.setText("O");
+                break;
+        }
         if (tuTurno) {
             t[pos] = 1;
-            switch (pos) {
-                case 0:
-                    b1.setText("X");
-                    break;
-                case 1:
-                    b2.setText("X");
-                    break;
-                case 2:
-                    b3.setText("X");
-                    break;
-                case 3:
-                    b4.setText("X");
-                    break;
-                case 4:
-                    b5.setText("X");
-                    break;
-                case 5:
-                    b6.setText("X");
-                    break;
-                case 6:
-                    b7.setText("X");
-                    break;
-                case 7:
-                    b8.setText("X");
-                    break;
-                case 8:
-                    b9.setText("X");
-                    break;
-            }
         } else {
             t[pos] = -1;
-            switch (pos) {
-                case 0:
-                    b1.setText("O");
-                    break;
-                case 1:
-                    b2.setText("O");
-                    break;
-                case 2:
-                    b3.setText("O");
-                    break;
-                case 3:
-                    b4.setText("O");
-                    break;
-                case 4:
-                    b5.setText("O");
-                    break;
-                case 5:
-                    b6.setText("O");
-                    break;
-                case 6:
-                    b7.setText("O");
-                    break;
-                case 7:
-                    b8.setText("O");
-                    break;
-                case 8:
-                    b9.setText("O");
-                    break;
-            }
         }
     }
 

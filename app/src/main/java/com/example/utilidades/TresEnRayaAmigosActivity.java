@@ -31,12 +31,11 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
         turno = r.nextBoolean(); //empieza jugando de manera aleatoria
 
 
-        if (turno){
+        if (turno) {
             Toast.makeText(getApplicationContext(),
                     "Comienza el jugador 1",
                     Toast.LENGTH_SHORT).show();
-        }
-        else{
+        } else {
             Toast.makeText(getApplicationContext(),
                     "Comienza el jugador 2",
                     Toast.LENGTH_SHORT).show();
@@ -65,12 +64,180 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
 
     }
 
+    @Override
+    public void onClick(View v) {
+        /* Resultado de la partida:
+            x = -1 : has perdido
+            x =  0 : empate
+            x =  1 : has ganado
+            x =  2 : partida no finalizada
+        */
+
+        int x = 2; // por defecto, no finalizada
+        switch (v.getId()) {
+            case R.id.bTres1:
+                if (t[0] == 0) {
+                    colocarFicha(0, turno); //jugar
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) { //si la partida ha finalizado...
+                        resultado(x); //llamar al método que muestra por pantalla al ganador
+                    } else { // si no ha finalizado
+                        //juega la CPU
+                    }
+                }
+                break;
+            case R.id.bTres2:
+                if (t[1] == 0) {
+                    colocarFicha(1, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres3:
+                if (t[2] == 0) {
+                    colocarFicha(2, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres4:
+                if (t[3] == 0) {
+                    colocarFicha(3, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres5:
+                if (t[4] == 0) {
+                    colocarFicha(4, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres6:
+                if (t[5] == 0) {
+                    colocarFicha(5, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres7:
+                if (t[6] == 0) {
+                    colocarFicha(6, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres8:
+                if (t[7] == 0) {
+                    colocarFicha(7, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+            case R.id.bTres9:
+                if (t[8] == 0) {
+                    colocarFicha(8, turno);
+                    turno ^= true;
+                    if ((x = comprobarFinal()) != 2) {
+                        resultado(x);
+                    }
+                }
+                break;
+        }
+        if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
+            if ((x = comprobarFinal()) != 2) { //y ha finalizado después de jugar la CPU
+                resultado(x); // se notifica el resultado
+            }
+        }
+    }
+
     private boolean lleno() {
         for (int i = 0; i < t.length; i++) {
             if (t[i] == 0)
                 return false;
         }
         return true;
+    }
+
+
+    private void colocarFicha(int pos, Boolean turno) {
+
+        switch (pos) {
+            case 0:
+                if (turno)
+                    b1.setText("X");
+                else
+                    b1.setText("O");
+                break;
+            case 1:
+                if (turno)
+                    b2.setText("X");
+                else
+                    b2.setText("O");
+                break;
+            case 2:
+                if (turno)
+                    b3.setText("X");
+                else
+                    b3.setText("O");
+                break;
+            case 3:
+                if (turno)
+                    b4.setText("X");
+                else
+                    b4.setText("O");
+                break;
+            case 4:
+                if (turno)
+                    b5.setText("X");
+                else
+                    b5.setText("O");
+                break;
+            case 5:
+                if (turno)
+                    b6.setText("X");
+                else
+                    b6.setText("O");
+                break;
+            case 6:
+                if (turno)
+                    b7.setText("X");
+                else
+                    b7.setText("O");
+                break;
+            case 7:
+                if (turno)
+                    b8.setText("X");
+                else
+                    b8.setText("O");
+                break;
+            case 8:
+                if (turno)
+                    b9.setText("X");
+                else
+                    b9.setText("O");
+                break;
+        }
+        if (turno) {
+            t[pos] = 1;
+        } else {
+            t[pos] = -1;
+        }
     }
 
     private int comprobarFinal() {
@@ -141,175 +308,5 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
                     Toast.LENGTH_SHORT).show();
         }
         finish();
-    }
-
-    private void colocarFicha(int pos, Boolean turno) {
-
-        if (turno) {
-            t[pos] = 1;
-            switch (pos) {
-                case 0:
-                    b1.setText("X");
-                    break;
-                case 1:
-                    b2.setText("X");
-                    break;
-                case 2:
-                    b3.setText("X");
-                    break;
-                case 3:
-                    b4.setText("X");
-                    break;
-                case 4:
-                    b5.setText("X");
-                    break;
-                case 5:
-                    b6.setText("X");
-                    break;
-                case 6:
-                    b7.setText("X");
-                    break;
-                case 7:
-                    b8.setText("X");
-                    break;
-                case 8:
-                    b9.setText("X");
-                    break;
-            }
-        } else {
-            t[pos] = -1;
-            switch (pos) {
-                case 0:
-                    b1.setText("O");
-                    break;
-                case 1:
-                    b2.setText("O");
-                    break;
-                case 2:
-                    b3.setText("O");
-                    break;
-                case 3:
-                    b4.setText("O");
-                    break;
-                case 4:
-                    b5.setText("O");
-                    break;
-                case 5:
-                    b6.setText("O");
-                    break;
-                case 6:
-                    b7.setText("O");
-                    break;
-                case 7:
-                    b8.setText("O");
-                    break;
-                case 8:
-                    b9.setText("O");
-                    break;
-            }
-        }
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        /* Resultado de la partida:
-            x = -1 : has perdido
-            x =  0 : empate
-            x =  1 : has ganado
-            x =  2 : partida no finalizada
-        */
-
-        int x = 2; // por defecto, no finalizada
-        switch (v.getId()) {
-            case R.id.bTres1:
-                if (t[0] == 0) {
-                    colocarFicha(0, turno); //jugar
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) { //si la partida ha finalizado...
-                        resultado(x); //llamar al método que muestra por pantalla al ganador
-                    } else { // si no ha finalizado
-                          //juega la CPU
-                    }
-                }
-                break;
-            case R.id.bTres2:
-                if (t[1] == 0) {
-                    colocarFicha(1, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres3:
-                if (t[2] == 0) {
-                    colocarFicha(2, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres4:
-                if (t[3] == 0) {
-                    colocarFicha(3, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres5:
-                if (t[4] == 0) {
-                    colocarFicha(4, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres6:
-                if (t[5] == 0) {
-                    colocarFicha(5, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres7:
-                if (t[6] == 0) {
-                    colocarFicha(6, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres8:
-                if (t[7] == 0) {
-                    colocarFicha(7, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-            case R.id.bTres9:
-                if (t[8] == 0) {
-                    colocarFicha(8, turno);
-                     turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    }
-                }
-                break;
-        }
-        if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
-            if ((x = comprobarFinal()) != 2) { //y ha finalizado después de jugar la CPU
-                resultado(x); // se notifica el resultado
-            }
-        }
     }
 }
