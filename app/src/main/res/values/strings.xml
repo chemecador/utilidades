@@ -38,4 +38,5 @@
     <string name="strTres">3 en raya (1 jugador)</string>
     <string name="strTresAmigo">3 en raya (2 jugadores)</string>
     <string name="strJuegos">Juegos</string>
+    <string name="strComprobarFarmacias">Comprobar farmacias en tu zona</string>
 </resources>

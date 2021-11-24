@@ -7,8 +7,19 @@
     android:orientation="vertical"
     tools:context=".FarmaciaActivity">
 
+    <Button
+        android:id="@+id/bFarmacia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:insetLeft="6dp"
+        android:insetTop="6dp"
+        android:insetRight="6dp"
+        android:insetBottom="6dp"
+        android:text="@string/strComprobarFarmacias" />
+
     <ListView
         android:id="@+id/lvFarmacias"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
