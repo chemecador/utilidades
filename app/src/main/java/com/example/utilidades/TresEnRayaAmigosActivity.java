@@ -12,12 +12,11 @@ import java.util.Random;
 
 public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Boolean turno;
+    private Boolean turno;
+    private Boolean partidaTerminada;
+    private Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
-    Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
-
-
-    Integer[] t = new Integer[]{
+    private Integer[] t = new Integer[]{
             0, 0, 0,
             0, 0, 0,
             0, 0, 0};
@@ -28,10 +27,11 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
         setContentView(R.layout.activity_tres_en_raya);
 
         Random r = new Random();
-        turno = r.nextBoolean(); //empieza jugando de manera aleatoria
+        this.turno = r.nextBoolean(); //empieza jugando de manera aleatoria
+        this.partidaTerminada = false;
 
 
-        if (turno) {
+        if (this.turno) {
             Toast.makeText(getApplicationContext(),
                     "Comienza el jugador 1",
                     Toast.LENGTH_SHORT).show();
@@ -66,6 +66,8 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
+        if (!this.partidaTerminada) {
+
         /* Resultado de la partida:
             x = -1 : has perdido
             x =  0 : empate
@@ -73,95 +75,94 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
             x =  2 : partida no finalizada
         */
 
-        int x = 2; // por defecto, no finalizada
-        switch (v.getId()) {
-            case R.id.bTres1:
-                if (t[0] == 0) {
-                    colocarFicha(0, turno); //jugar
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) { //si la partida ha finalizado...
-                        resultado(x); //llamar al método que muestra por pantalla al ganador
-                    } else { // si no ha finalizado
-                        //juega la CPU
+            int x = 2; // por defecto, no finalizada
+            switch (v.getId()) {
+                case R.id.bTres1:
+                    if (t[0] == 0) {
+                        colocarFicha(0, turno); //jugar
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) { //si la partida ha finalizado...
+                            resultado(x); //llamar al método que muestra por pantalla al ganador
+                        }
                     }
-                }
-                break;
-            case R.id.bTres2:
-                if (t[1] == 0) {
-                    colocarFicha(1, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres2:
+                    if (t[1] == 0) {
+                        colocarFicha(1, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres3:
-                if (t[2] == 0) {
-                    colocarFicha(2, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres3:
+                    if (t[2] == 0) {
+                        colocarFicha(2, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres4:
-                if (t[3] == 0) {
-                    colocarFicha(3, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres4:
+                    if (t[3] == 0) {
+                        colocarFicha(3, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres5:
-                if (t[4] == 0) {
-                    colocarFicha(4, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres5:
+                    if (t[4] == 0) {
+                        colocarFicha(4, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres6:
-                if (t[5] == 0) {
-                    colocarFicha(5, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres6:
+                    if (t[5] == 0) {
+                        colocarFicha(5, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres7:
-                if (t[6] == 0) {
-                    colocarFicha(6, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres7:
+                    if (t[6] == 0) {
+                        colocarFicha(6, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres8:
-                if (t[7] == 0) {
-                    colocarFicha(7, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres8:
+                    if (t[7] == 0) {
+                        colocarFicha(7, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
-                }
-                break;
-            case R.id.bTres9:
-                if (t[8] == 0) {
-                    colocarFicha(8, turno);
-                    turno ^= true;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
+                    break;
+                case R.id.bTres9:
+                    if (t[8] == 0) {
+                        colocarFicha(8, turno);
+                        this.turno ^= true;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        }
                     }
+                    break;
+            }
+            if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
+                if ((x = comprobarFinal()) != 2) { //y ha finalizado después de jugar la CPU
+                    resultado(x); // se notifica el resultado
                 }
-                break;
-        }
-        if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
-            if ((x = comprobarFinal()) != 2) { //y ha finalizado después de jugar la CPU
-                resultado(x); // se notifica el resultado
             }
         }
     }
@@ -179,61 +180,61 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
 
         switch (pos) {
             case 0:
-                if (turno)
+                if (this.turno)
                     b1.setText("X");
                 else
                     b1.setText("O");
                 break;
             case 1:
-                if (turno)
+                if (this.turno)
                     b2.setText("X");
                 else
                     b2.setText("O");
                 break;
             case 2:
-                if (turno)
+                if (this.turno)
                     b3.setText("X");
                 else
                     b3.setText("O");
                 break;
             case 3:
-                if (turno)
+                if (this.turno)
                     b4.setText("X");
                 else
                     b4.setText("O");
                 break;
             case 4:
-                if (turno)
+                if (this.turno)
                     b5.setText("X");
                 else
                     b5.setText("O");
                 break;
             case 5:
-                if (turno)
+                if (this.turno)
                     b6.setText("X");
                 else
                     b6.setText("O");
                 break;
             case 6:
-                if (turno)
+                if (this.turno)
                     b7.setText("X");
                 else
                     b7.setText("O");
                 break;
             case 7:
-                if (turno)
+                if (this.turno)
                     b8.setText("X");
                 else
                     b8.setText("O");
                 break;
             case 8:
-                if (turno)
+                if (this.turno)
                     b9.setText("X");
                 else
                     b9.setText("O");
                 break;
         }
-        if (turno) {
+        if (this.turno) {
             t[pos] = 1;
         } else {
             t[pos] = -1;
@@ -298,15 +299,17 @@ public class TresEnRayaAmigosActivity extends AppCompatActivity implements View.
             Toast.makeText(getApplicationContext(),
                     "¡Gana el jugador 1!",
                     Toast.LENGTH_SHORT).show();
+            this.partidaTerminada = true;
         } else if (r == -1) {
             Toast.makeText(getApplicationContext(),
                     "¡Gana el jugador 2!",
                     Toast.LENGTH_SHORT).show();
+            this.partidaTerminada = true;
         } else if (r == 0) {
             Toast.makeText(getApplicationContext(),
                     "¡Empate!",
                     Toast.LENGTH_SHORT).show();
+            this.partidaTerminada = true;
         }
-        finish();
     }
 }

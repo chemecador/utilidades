@@ -11,11 +11,11 @@ import java.util.Random;
 
 public class TresEnRayaActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Boolean tuTurno;
+    private Boolean tuTurno;
+    private Boolean partidaTerminada;
+    private Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
-    Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
-
-    Integer[] t = new Integer[]{
+    private Integer[] t = new Integer[]{
             0, 0, 0,
             0, 0, 0,
             0, 0, 0};
@@ -24,6 +24,7 @@ public class TresEnRayaActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tres_en_raya);
+        this.partidaTerminada = false;
 
         Random r = new Random();
         tuTurno = r.nextBoolean(); //empieza jugando de manera aleatoria
@@ -133,16 +134,18 @@ public class TresEnRayaActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(),
                     "¡Has ganado!",
                     Toast.LENGTH_SHORT).show();
+            this.partidaTerminada = true;
         } else if (r == -1) {
             Toast.makeText(getApplicationContext(),
                     "¡Has perdido!",
                     Toast.LENGTH_SHORT).show();
+            this.partidaTerminada = true;
         } else if (r == 0) {
             Toast.makeText(getApplicationContext(),
                     "¡Empate!",
                     Toast.LENGTH_SHORT).show();
+            this.partidaTerminada = true;
         }
-        finish();
     }
 
     private void colocarFicha(int pos, Boolean tuTurno) {
@@ -213,6 +216,8 @@ public class TresEnRayaActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
+
+        if (!this.partidaTerminada) {
         /* Resultado de la partida:
             x = -1 : has perdido
             x =  0 : empate
@@ -220,111 +225,112 @@ public class TresEnRayaActivity extends AppCompatActivity implements View.OnClic
             x =  2 : partida no finalizada
         */
 
-        int x = 2; // por defecto, no finalizada
-        switch (v.getId()) {
-            case R.id.bTres1:
-                if (t[0] == 0) {
-                    colocarFicha(0, tuTurno); //jugar
-                    this.tuTurno = false; //turno del rival
-                    if ((x = comprobarFinal()) != 2) { //si la partida ha finalizado...
-                        resultado(x); //llamar al método que muestra por pantalla al ganador
-                    } else { // si no ha finalizado
-                        jugarCPU(); //juega la CPU
+            int x = 2; // por defecto, no finalizada
+            switch (v.getId()) {
+                case R.id.bTres1:
+                    if (t[0] == 0) {
+                        colocarFicha(0, tuTurno); //jugar
+                        this.tuTurno = false; //turno del rival
+                        if ((x = comprobarFinal()) != 2) { //si la partida ha finalizado...
+                            resultado(x); //llamar al método que muestra por pantalla al ganador
+                        } else { // si no ha finalizado
+                            jugarCPU(); //juega la CPU
+                        }
                     }
-                }
-                break;
-            case R.id.bTres2:
-                if (t[1] == 0) {
-                    colocarFicha(1, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres2:
+                    if (t[1] == 0) {
+                        colocarFicha(1, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres3:
-                if (t[2] == 0) {
-                    colocarFicha(2, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres3:
+                    if (t[2] == 0) {
+                        colocarFicha(2, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres4:
-                if (t[3] == 0) {
-                    colocarFicha(3, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres4:
+                    if (t[3] == 0) {
+                        colocarFicha(3, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres5:
-                if (t[4] == 0) {
-                    colocarFicha(4, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres5:
+                    if (t[4] == 0) {
+                        colocarFicha(4, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres6:
-                if (t[5] == 0) {
-                    colocarFicha(5, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres6:
+                    if (t[5] == 0) {
+                        colocarFicha(5, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres7:
-                if (t[6] == 0) {
-                    colocarFicha(6, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres7:
+                    if (t[6] == 0) {
+                        colocarFicha(6, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres8:
-                if (t[7] == 0) {
-                    colocarFicha(7, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres8:
+                    if (t[7] == 0) {
+                        colocarFicha(7, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
-                }
-                break;
-            case R.id.bTres9:
-                if (t[8] == 0) {
-                    colocarFicha(8, tuTurno);
-                    this.tuTurno = false;
-                    if ((x = comprobarFinal()) != 2) {
-                        resultado(x);
-                    } else {
-                        jugarCPU();
+                    break;
+                case R.id.bTres9:
+                    if (t[8] == 0) {
+                        colocarFicha(8, tuTurno);
+                        this.tuTurno = false;
+                        if ((x = comprobarFinal()) != 2) {
+                            resultado(x);
+                        } else {
+                            jugarCPU();
+                        }
                     }
+                    break;
+            }
+            if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
+                if ((x = comprobarFinal()) != 2) { //y ha finalizado después de jugar la CPU
+                    resultado(x); // se notifica el resultado
                 }
-                break;
-        }
-        if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
-            if ((x = comprobarFinal()) != 2) { //y ha finalizado después de jugar la CPU
-                resultado(x); // se notifica el resultado
             }
         }
     }
