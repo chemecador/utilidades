@@ -1,6 +1,5 @@
 package com.example.utilidades;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

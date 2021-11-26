@@ -14,16 +14,16 @@ import java.text.DecimalFormat;
 
 public class CalculadoraActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button suma;
-    Button resta;
-    Button multiplicacion;
-    Button division;
-    Button cuadrado;
-    Button raiz;
+    private Button suma;
+    private Button resta;
+    private Button multiplicacion;
+    private Button division;
+    private Button cuadrado;
+    private Button raiz;
 
-    EditText numero1;
-    EditText numero2;
-    TextView resultado;
+    private EditText numero1;
+    private EditText numero2;
+    private TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

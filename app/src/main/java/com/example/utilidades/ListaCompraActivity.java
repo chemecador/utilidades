@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.utilidades.db.Database;
 import com.example.utilidades.util.Producto;
@@ -22,19 +26,29 @@ public class ListaCompraActivity extends AppCompatActivity implements View.OnCli
 AdapterView.OnItemClickListener{
 
     private Button anadir;
+   // private Button calcularTotal;
+    private TextView precioTotal;
     private ArrayList<Producto> listaProductos;
     private Database db;
     private Producto productoSeleccionado;
     private ProductoAdapter adapter;
+    private SharedPreferences prefs;
     private ListView lvLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_compra);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this); //Consigo la referencia a las preferencias para poder leerlas y escribirlas
+
+
+        precioTotal = findViewById(R.id.txtListaTotal);
 
         anadir = findViewById(R.id.bListaAnadir);
         anadir.setOnClickListener(this);
+
+        //calcularTotal = findViewById(R.id.bListaTotal);
+       // calcularTotal.setOnClickListener(this);
 
         db = new Database(this);
         listaProductos = new ArrayList<>();
@@ -52,17 +66,53 @@ AdapterView.OnItemClickListener{
             case R.id.bListaAnadir:
                 Intent i = new Intent (this, AddActivity.class);
                 startActivity(i);
+            //case R.id.bListaTotal:
+              //  calcular();
         }
     }
+
+    private void calcular() {
+        double total = 0.0;
+        for (Producto p : listaProductos){
+            double parcial = p.getCantidad() * p.getPrecio();
+            total +=parcial;
+        }
+        String s = "Total: " + total;
+        Toast.makeText(getApplicationContext(),
+                s,
+                Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     protected void onResume() {
 
         super.onResume();
+        if (prefs.getBoolean("preferencias_cantidad", false) == false) {
+            if (prefs.getBoolean("preferencias_descendente",false) == false){
+                listaProductos = db.getProductosNombre(false);
+            }
+            else {
 
-        listaProductos=db.getProductos();
+                listaProductos = db.getProductosNombre(true);
+            }
+        } else {
+            if (prefs.getBoolean("preferencias_descendente",false) == false){
+
+                listaProductos = db.getProductosCantidad(false);
+            }
+            else {
+
+                listaProductos = db.getProductosCantidad(true);
+            }
+        }
         adapter=new ProductoAdapter(this, listaProductos);//Creo el adaptador para la lista, que trabajará con el arraylist listaAmigos
         lvLista.setAdapter(adapter); //asigno el adaptador propio al listview
-
+        double total = 0.0;
+        for (Producto p : listaProductos){
+            double parcial = p.getCantidad() * p.getPrecio();
+            total +=parcial;
+        }
+        precioTotal.setText("Precio total: " + String.valueOf(total));
     }
 
 

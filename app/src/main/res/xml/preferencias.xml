@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/strUsuario">
-
-        <EditTextPreference
-            android:defaultValue="Default value"
-            android:key="edit_text_preference_1"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
-            android:summary="@string/strNombreDescripcion"
-            android:title="@string/strNombreUsuario" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="@string/strListaCompra">
 
         <CheckBoxPreference
+            android:id="@+id/prefCantidad"
             android:defaultValue="false"
-            android:key="preferencia_morosos"
-            android:summary="@string/strOrdenarPorPrecioDescripcion"
-            android:title="@string/strOrdenarPorPrecio" />
+            android:key="preferencias_cantidad"
+            android:summary="@string/strOrdenarPorCantidadDescripcion"
+            android:title="@string/strOrdenarPorCantidad" />
+        <CheckBoxPreference
+            android:id="@+id/prefDescendente"
+            android:defaultValue="false"
+            android:key="preferencias_descendente"
+            android:summary="@string/strOrdenDescendenteDescripcion"
+            android:title="@string/strOrdenDescendente" />
     </PreferenceCategory>
 </PreferenceScreen>

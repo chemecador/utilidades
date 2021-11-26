@@ -13,14 +13,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button calculadora;
-    Button conversor;
-    Button listaCompra;
-    Button farmacias;
-    Button conecta;
-    Button conectaAmigos;
-    Button tresEnRaya;
-    Button tresEnRayaAmigos;
+    private Button calculadora;
+    private Button conversor;
+    private Button listaCompra;
+    private Button farmacias;
+    private Button conecta;
+    private Button conectaAmigos;
+    private Button tresEnRaya;
+    private Button tresEnRayaAmigos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

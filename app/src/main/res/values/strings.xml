@@ -25,8 +25,6 @@
     <string name="strDetalle">Detalle</string>
     <string name="strBorrar">Borrar</string>
     <string name="strUsuario">Usuario</string>
-    <string name="strOrdenarPorPrecio">Ordenar por precio descendente</string>
-    <string name="strOrdenarPorPrecioDescripcion">Pulsa aquí si quieres ordenar los productos por precio descendente</string>
     <string name="strNombreDescripcion">Tu nombre</string>
     <string name="strNombreUsuario">Nombre de usuario</string>
     <string name="strFarmacias">Farmacias</string>
@@ -39,4 +37,9 @@
     <string name="strTresAmigo">3 en raya (2 jugadores)</string>
     <string name="strJuegos">Juegos</string>
     <string name="strComprobarFarmacias">Comprobar farmacias en tu zona</string>
+    <string name="strOrdenarPorCantidad">Ordenar por cantidad</string>
+    <string name="strOrdenarPorCantidadDescripcion">Ordenar los productos por cantidad en lugar de por orden alfabético</string>
+    <string name="strOrdenDescendente">Orden descendente</string>
+    <string name="strOrdenDescendenteDescripcion">Ordenar los productos de mayor a menor en lugar de menor a mayor</string>
+    <string name="strCalcularTotal">Calcular total</string>
 </resources>

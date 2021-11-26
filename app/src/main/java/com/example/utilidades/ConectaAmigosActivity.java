@@ -198,12 +198,12 @@ public class ConectaAmigosActivity extends AppCompatActivity implements View.OnC
     private void resultado(int r) {
         if (r == 1) {
             Toast.makeText(getApplicationContext(),
-                    "¡Has ganado!",
+                    "¡Gana el jugador 1!",
                     Toast.LENGTH_SHORT).show();
             partidaTerminada = true;
         } else if (r == -1) {
             Toast.makeText(getApplicationContext(),
-                    "¡Has perdido!",
+                    "¡Gana el jugador 2!",
                     Toast.LENGTH_SHORT).show();
             partidaTerminada = true;
         } else if (r == 0) {

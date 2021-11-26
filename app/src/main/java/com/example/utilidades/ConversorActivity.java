@@ -17,11 +17,11 @@ import java.text.DecimalFormat;
 public class ConversorActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    EditText cantidad;
-    Spinner spinner1;
-    Spinner spinner2;
-    Button convertir;
-    TextView resultado;
+    private EditText cantidad;
+    private Spinner spinner1;
+    private Spinner spinner2;
+    private Button convertir;
+    private TextView resultado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

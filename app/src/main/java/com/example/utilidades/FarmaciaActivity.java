@@ -39,11 +39,11 @@ import java.util.List;
 public class FarmaciaActivity extends AppCompatActivity implements View.OnClickListener, LocationListener {
 
     private static final int SOLICITUD_PERMISO_LOCALIZACION = 3;
-    ArrayList<Farmacia> listaFarmacias;
-    ListView lv;
-    FarmaciaAdapter adapter;
-    Button comprobar;
-    LocationManager gestor;
+    private ArrayList<Farmacia> listaFarmacias;
+    private ListView lv;
+    private FarmaciaAdapter adapter;
+    private Button comprobar;
+    private LocationManager gestor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +85,9 @@ public class FarmaciaActivity extends AppCompatActivity implements View.OnClickL
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 obtenerLocalizacion();
             } else {
-                Toast.makeText(this, "OK, entonces mostraré" +
-                        " todas las farmacias de Zaragoza.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No puedo mostrarte las farmacias en tu zona sin este permiso",
+                        Toast.LENGTH_LONG).show();
+                finish();
             }
         }
     }

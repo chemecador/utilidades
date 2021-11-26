@@ -30,7 +30,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:orientation="horizontal">
 
         <ListView
@@ -39,10 +39,19 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/txtListaTotal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4.5"
+        android:gravity="clip_vertical|center_horizontal"
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/bListaAnadir"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
         android:text="@string/strAnadir" />
+
 </LinearLayout>
