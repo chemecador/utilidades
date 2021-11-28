@@ -23,13 +23,10 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
         //creo BitMaps con las imágenes de Drawable y las coloco en los contenedores
         Bitmap miBitMap= BitmapFactory.decodeResource(getResources(), R.drawable.comida);
         iv1.setImageBitmap(miBitMap);
-        //iv1.setImageDrawable(getResources().getDrawable(R.drawable.av1));
         miBitMap= BitmapFactory.decodeResource(getResources(), R.drawable.bebida);
         iv2.setImageBitmap(miBitMap);
-        //iv2.setImageDrawable(getResources().getDrawable(R.drawable.av3));
         miBitMap= BitmapFactory.decodeResource(getResources(), R.drawable.otros);
         iv3.setImageBitmap(miBitMap);
-        //iv3.setImageDrawable(getResources().getDrawable(R.drawable.av4));
 
         //pongo listener a todas las fotos para poder interactuar con ellas
         iv1.setOnClickListener(this);

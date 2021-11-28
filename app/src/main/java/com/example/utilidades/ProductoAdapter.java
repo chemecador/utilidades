@@ -75,8 +75,6 @@ public class ProductoAdapter extends BaseAdapter {
 
         //Pongo cada dato en su elemento de interfaz en el holder
         holder.foto.setImageBitmap(producto.getFoto());
-        //holder.foto.setImageDrawable(context.getResources().getDrawable(R.drawable.av4));
-
         holder.nombre.setText(producto.getNombre());
         holder.precio.setText(String.valueOf(producto.getPrecio()));
         holder.cantidad.setText(String.valueOf(producto.getCantidad()));

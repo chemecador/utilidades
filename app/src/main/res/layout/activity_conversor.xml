@@ -82,7 +82,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#3DAFE6"
+        android:backgroundTint="#3DAFE6"
+        android:fontFamily="monospace"
         android:gravity="center"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
 
 </LinearLayout>

@@ -41,6 +41,7 @@ public class Farmacia {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
     public Intent putExtraFarmacia (Intent i){
         i.putExtra("NOMBRE",this.getNombre());
         i.putExtra("TELEFONO",this.getTlf());

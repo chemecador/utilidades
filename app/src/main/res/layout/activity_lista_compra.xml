@@ -39,19 +39,23 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtListaTotal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4.5"
-        android:gravity="clip_vertical|center_horizontal"
-        android:textSize="20sp" />
-
     <Button
         android:id="@+id/bListaAnadir"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
+        android:backgroundTint="#E1701A"
         android:text="@string/strAnadir" />
+
+    <TextView
+        android:id="@+id/txtListaTotal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4.5"
+        android:background="#F6B686"
+        android:backgroundTint="#F6B686"
+        android:fontFamily="monospace"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="20sp" />
 
 </LinearLayout>

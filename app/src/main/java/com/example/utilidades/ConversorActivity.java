@@ -3,7 +3,6 @@ package com.example.utilidades;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,10 +17,11 @@ public class ConversorActivity extends AppCompatActivity implements View.OnClick
 
 
     private EditText cantidad;
-    private Spinner spinner1;
+    private Spinner spinner1; //combobox
     private Spinner spinner2;
     private Button convertir;
     private TextView resultado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +34,10 @@ public class ConversorActivity extends AppCompatActivity implements View.OnClick
         spinner2 = findViewById(R.id.conversorSpinner2);
 
         String[] opciones = {"euros", "dolares", "libras"};
-        ArrayAdapter<String> adapterSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,opciones);
+        ArrayAdapter<String> adapterSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones);
         spinner1.setAdapter(adapterSpinner);
         spinner2.setAdapter(adapterSpinner);
+        spinner2.setSelection(1);
 
         convertir = findViewById(R.id.bConvertir);
         convertir.setOnClickListener(this);
@@ -47,47 +48,43 @@ public class ConversorActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        //truncar decimales
         DecimalFormat formateador = new DecimalFormat("####.###");
         Double antes = 0.0;
-        if (cantidad.getText().toString().length() > 0){
+        if (cantidad.getText().toString().length() > 0) {
             antes = Double.parseDouble(cantidad.getText().toString());
         }
         Double despues = antes;
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.bConvertir:
                 if (cantidad.getText().toString().length() < 1) {
                     Toast.makeText(this, "Introduce los dos sumandos arriba"
-                        , Toast.LENGTH_LONG).show();
+                            , Toast.LENGTH_LONG).show();
                 }
                 String divisa1 = spinner1.getSelectedItem().toString();
                 String divisa2 = spinner2.getSelectedItem().toString();
-                if (divisa1.equals("euros")){
-                    if (divisa2.equals("dolares")){
-                        despues = antes*1.16;
-                    }
-                    else if (divisa2.equals("libras")){
-                        despues = antes*0.84;
+                if (divisa1.equals("euros")) {
+                    if (divisa2.equals("dolares")) {
+                        despues = antes * 1.16;
+                    } else if (divisa2.equals("libras")) {
+                        despues = antes * 0.84;
 
                     }
-                }
-                else if (divisa1.equals("dolares")){
-                    if (divisa2.equals("euros")){
-                        despues = antes*0.86;
+                } else if (divisa1.equals("dolares")) {
+                    if (divisa2.equals("euros")) {
+                        despues = antes * 0.86;
+                    } else if (divisa2.equals("libras")) {
+                        despues = antes * 0.73;
                     }
-                    else if (divisa2.equals("libras")){
-                        despues = antes*0.73;
-                    }
-                }
-                else if (divisa1.equals("libras")){
-                    if (divisa2.equals("euros")){
-                        despues = antes*1.18;
-                    }
-                    else if (divisa2.equals("dolares")){
-                        despues = antes*1.37;
+                } else if (divisa1.equals("libras")) {
+                    if (divisa2.equals("euros")) {
+                        despues = antes * 1.18;
+                    } else if (divisa2.equals("dolares")) {
+                        despues = antes * 1.37;
                     }
                 }
                 String resultadoMostrar = formateador.format(antes) + " " + divisa1 + " son " +
-                        String.valueOf(formateador.format(despues) + " " + divisa2);
+                        formateador.format(despues) + " " + divisa2;
                 resultado.setText(resultadoMostrar);
                 break;
         }

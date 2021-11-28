@@ -50,32 +50,30 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void eliminarProducto(Producto producto) {
-        //Elimina un Producto de la base de datos
         SQLiteDatabase db = getWritableDatabase();
         String[] argumentos = new String[]{String.valueOf(producto.getId())};
-        db.delete(ConstantesDB.TABLA_PRODUCTOS, "_id= ?", argumentos);//borrará el Producto cuyo id coincida con el que hemos puesto en 'argumentos'
+        db.delete(ConstantesDB.TABLA_PRODUCTOS, "_id= ?", argumentos);
         db.close();
     }
 
     public ArrayList<Producto> getProductosNombre(Boolean desc) {
         final String[] SELECT = {_ID, ConstantesDB.TIPO, ConstantesDB.NOMBRE,
-                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};//Creo un vector con los nombres de las columnas para el select de la consulta
-        SQLiteDatabase db = getReadableDatabase();//Referencia a la base de datos en modo lectura
+                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};//Vector con los nombres de las columnas para el select de la consulta
+        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = null;
-        if (desc){
+        if (desc) {
             cursor = db.query(ConstantesDB.TABLA_PRODUCTOS, SELECT,
                     null, null, null, null,
-                    ConstantesDB.NOMBRE + " DESC");//Ejecuto la consulta
-        }
-        else {
+                    ConstantesDB.NOMBRE + " DESC");//Ejecutar la consulta
+        } else {
             cursor = db.query(ConstantesDB.TABLA_PRODUCTOS, SELECT,
                     null, null, null, null,
-                    ConstantesDB.NOMBRE);//Ejecuto la consulta
+                    ConstantesDB.NOMBRE);
         }
 
         ArrayList<Producto> listaProductos = new ArrayList<>();
         Producto producto = null;
-        while (cursor.moveToNext()) {//Mientras el cursor pueda recorrer el resultado de la consulta
+        while (cursor.moveToNext()) {
             producto = new Producto();
             producto.setId(cursor.getLong(0));//El orden de las columnas debe ser el que haya puesto en el vector SELECT
             producto.setTipo(cursor.getString(1));
@@ -94,8 +92,8 @@ public class Database extends SQLiteOpenHelper {
     public ArrayList<Producto> getProductosCantidad(Boolean desc) {
 
         final String[] SELECT = {_ID, ConstantesDB.TIPO, ConstantesDB.NOMBRE,
-                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};//Creo un vector con los nombres de las columnas para el select de la consulta
-        SQLiteDatabase db = getReadableDatabase();//Referencia a la base de datos en modo lectura
+                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};
+        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = null;
         if (desc) {
             cursor = db.query(ConstantesDB.TABLA_PRODUCTOS, SELECT,
@@ -108,9 +106,9 @@ public class Database extends SQLiteOpenHelper {
         }
         ArrayList<Producto> listaProductos = new ArrayList<>();
         Producto producto = null;
-        while (cursor.moveToNext()) {//Mientras el cursor pueda recorrer el resultado de la consulta
+        while (cursor.moveToNext()) {
             producto = new Producto();
-            producto.setId(cursor.getLong(0));//El orden de las columnas debe ser el que haya puesto en el vector SELECT
+            producto.setId(cursor.getLong(0));
             producto.setTipo(cursor.getString(1));
             producto.setNombre(cursor.getString(2));
             producto.setPrecio(cursor.getDouble(3));
@@ -126,16 +124,16 @@ public class Database extends SQLiteOpenHelper {
 
     public ArrayList<Producto> getCaros(Double precio) {
         final String[] SELECT = {_ID, ConstantesDB.TIPO, ConstantesDB.NOMBRE,
-                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};//Creo un vector con los nombres de las columnas para el select de la consulta
-        SQLiteDatabase db = getReadableDatabase();//Referencia a la base de datos en modo lectura
+                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};
+        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(ConstantesDB.TABLA_PRODUCTOS, SELECT,
                 "precio > ?", null, null, null,
                 ConstantesDB.PRECIO);//Ejecuto la consulta
         ArrayList<Producto> listaProductos = new ArrayList<>();
         Producto producto = null;
-        while (cursor.moveToNext()) {//Mientras el cursor pueda recorrer el resultado de la consulta
+        while (cursor.moveToNext()) {
             producto = new Producto();
-            producto.setId(cursor.getLong(0));//El orden de las columnas debe ser el que haya puesto en el vector SELECT
+            producto.setId(cursor.getLong(0));
             producto.setTipo(cursor.getString(1));
             producto.setNombre(cursor.getString(2));
             producto.setPrecio(cursor.getDouble(3));

@@ -29,7 +29,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
         foto=(ImageView)findViewById(R.id.ivFotoAdd);
-        //foto.setImageDrawable(getResources().getDrawable(R.drawable.comida));
         Bitmap miBitMap= BitmapFactory.decodeResource(getResources(), R.drawable.comida);
         foto.setImageBitmap(miBitMap);
         foto.setOnClickListener(this);

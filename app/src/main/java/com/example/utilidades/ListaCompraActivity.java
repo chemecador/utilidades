@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.utilidades.db.Database;
 import com.example.utilidades.util.Producto;
@@ -26,7 +25,6 @@ public class ListaCompraActivity extends AppCompatActivity implements View.OnCli
 AdapterView.OnItemClickListener{
 
     private Button anadir;
-   // private Button calcularTotal;
     private TextView precioTotal;
     private ArrayList<Producto> listaProductos;
     private Database db;
@@ -47,9 +45,6 @@ AdapterView.OnItemClickListener{
         anadir = findViewById(R.id.bListaAnadir);
         anadir.setOnClickListener(this);
 
-        //calcularTotal = findViewById(R.id.bListaTotal);
-       // calcularTotal.setOnClickListener(this);
-
         db = new Database(this);
         listaProductos = new ArrayList<>();
         lvLista = findViewById(R.id.lvListaCompra);
@@ -66,22 +61,9 @@ AdapterView.OnItemClickListener{
             case R.id.bListaAnadir:
                 Intent i = new Intent (this, AddActivity.class);
                 startActivity(i);
-            //case R.id.bListaTotal:
-              //  calcular();
         }
     }
 
-    private void calcular() {
-        double total = 0.0;
-        for (Producto p : listaProductos){
-            double parcial = p.getCantidad() * p.getPrecio();
-            total +=parcial;
-        }
-        String s = "Total: " + total;
-        Toast.makeText(getApplicationContext(),
-                s,
-                Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     protected void onResume() {
@@ -143,7 +125,8 @@ AdapterView.OnItemClickListener{
             case R.id.menu_contextual_borrar://Borrará el elemento seleccionado de la lista
                 db.eliminarProducto(productoSeleccionado);//Llamo al método de la base de datos que borra un amigo
 
-                onRestart();//actualizo la activty para que el elemento borrado ya no aparezca en la lista
+                //onRestart();//actualizo la activty para que el elemento borrado ya no aparezca en la lista
+                onResume();
                 break;
 
         }
