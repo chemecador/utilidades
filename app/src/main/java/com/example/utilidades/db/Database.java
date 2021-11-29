@@ -121,29 +121,4 @@ public class Database extends SQLiteOpenHelper {
         db.close();
         return listaProductos;
     }
-
-    public ArrayList<Producto> getCaros(Double precio) {
-        final String[] SELECT = {_ID, ConstantesDB.TIPO, ConstantesDB.NOMBRE,
-                ConstantesDB.PRECIO, ConstantesDB.CANTIDAD, ConstantesDB.FOTO};
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.query(ConstantesDB.TABLA_PRODUCTOS, SELECT,
-                "precio > ?", null, null, null,
-                ConstantesDB.PRECIO);//Ejecuto la consulta
-        ArrayList<Producto> listaProductos = new ArrayList<>();
-        Producto producto = null;
-        while (cursor.moveToNext()) {
-            producto = new Producto();
-            producto.setId(cursor.getLong(0));
-            producto.setTipo(cursor.getString(1));
-            producto.setNombre(cursor.getString(2));
-            producto.setPrecio(cursor.getDouble(3));
-            producto.setCantidad(cursor.getInt(4));
-            producto.setFoto(Util.getBitmap(cursor.getBlob(5)));
-            listaProductos.add(producto);
-
-        }
-        cursor.close();
-        db.close();
-        return listaProductos;
-    }
 }

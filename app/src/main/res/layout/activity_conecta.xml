@@ -18,20 +18,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"></LinearLayout>
+            android:background="@drawable/borde"
+            android:orientation="vertical" />
 
         <LinearLayout
             android:id="@+id/col1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"></LinearLayout>
+            android:background="@drawable/borde"
+            android:orientation="vertical"/>
 
         <LinearLayout
             android:id="@+id/col2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/borde"
             android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
@@ -39,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/borde"
             android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
@@ -46,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/borde"
             android:orientation="vertical">
 
         </LinearLayout>
@@ -55,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/borde"
             android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
@@ -62,11 +68,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/borde"
             android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/c4NoTocar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"

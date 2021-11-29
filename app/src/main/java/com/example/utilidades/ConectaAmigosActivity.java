@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class ConectaAmigosActivity extends AppCompatActivity implements View.OnClickListener {
     private View c0, c1, c2, c3, c4, c5, c6;
+    private View noTocar;
     private Boolean turno;
     private ArrayList<ImageView> fichas;
     private Integer[] cantidadFichas; //cantidad de fichas en cada columna
@@ -39,6 +40,7 @@ public class ConectaAmigosActivity extends AppCompatActivity implements View.OnC
         c4 = findViewById(R.id.col4);
         c5 = findViewById(R.id.col5);
         c6 = findViewById(R.id.col6);
+        noTocar = findViewById(R.id.c4NoTocar);
 
 
         c0.setOnClickListener(this);
@@ -48,6 +50,7 @@ public class ConectaAmigosActivity extends AppCompatActivity implements View.OnC
         c4.setOnClickListener(this);
         c5.setOnClickListener(this);
         c6.setOnClickListener(this);
+        noTocar.setOnClickListener(this);
 
         this.partidaTerminada = false;
         this.turno = true;
@@ -185,6 +188,11 @@ public class ConectaAmigosActivity extends AppCompatActivity implements View.OnC
                             resultado(x);
                         }
                     }
+                    break;
+                default:
+                    Toast.makeText(getApplicationContext(),
+                            "Toca arriba en la columna que deseas colocar la ficha",
+                            Toast.LENGTH_SHORT).show();
                     break;
             }
             if (x == 2) { //si la partida no ha finalizado antes de jugar la CPU
