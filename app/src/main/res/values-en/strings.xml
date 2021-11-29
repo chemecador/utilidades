@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Utilidades</string>
+    <string name="strPreferencias">Preferences</string>
+    <string name="strAbout">About us...</string>
+    <string name="strSuma">+</string>
+    <string name="strResta">-</string>
+    <string name="strMultiplicacion">x</string>
+    <string name="strDivision">÷</string>
+    <string name="strElevar">X^Y</string>
+    <string name="strRaiz">sqrt(x)</string>
+    <string name="strCantidad">Units:</string>
+    <string name="strDivisa1">Exchange from...</string>
+    <string name="strDivisa2">To...</string>
+    <string name="strCalculadora">Calculator</string>
+    <string name="strConversor">Converter</string>
+    <string name="strCalculadoraAclaracion">In SQRT(x) operation, only first number\'s square root will be calculated</string>
+    <string name="strConvertir">Convert</string>
+    <string name="strListaCompra">Shop list</string>
+    <string name="strAnadir">Add</string>
+    <string name="strTipoProducto">Type of product:</string>
+    <string name="strNombreProducto">Name of product:</string>
+    <string name="strPrecio">Price:</string>
+    <string name="strInfo">Info</string>
+    <string name="strDetalles">Details</string>
+    <string name="strDetalle">Detail</string>
+    <string name="strBorrar">Delete</string>
+    <string name="strFarmacias">Pharmacy</string>
+    <string name="strNombre">Name:</string>
+    <string name="strTelefono">Phone number:</string>
+    <string name="strDireccion">Address:</string>
+    <string name="strConecta">Connect 4 (1 player)</string>
+    <string name="srtConectaAmigo">Connect 4 (2 players)</string>
+    <string name="strTres">Tic Tac Toe (1 player)</string>
+    <string name="strTresAmigo">Tic Tac Toe (2 players)</string>
+    <string name="strJuegos">Games</string>
+    <string name="strComprobarFarmacias">Check pharmacies in your zone</string>
+    <string name="strOrdenarPorCantidad">Order by units</string>
+    <string name="strOrdenarPorCantidadDescripcion">Order products by units instead of alphabetical order</string>
+    <string name="strOrdenDescendente">Descending order</string>
+    <string name="strOrdenDescendenteDescripcion">Descending order instead of ascending order</string>
+    <string name="strCalcularTotal">Total cost</string>
+    <string name="strPrimerNumero">First number...</string>
+    <string name="strSegundoNumero">Second number...</string>
+</resources>
